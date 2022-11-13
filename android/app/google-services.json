@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "441105925750",
+    "firebase_url": "https://ecofarming-f867f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ecofarming-f867f",
+    "storage_bucket": "ecofarming-f867f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441105925750:android:ff48df734f1f2ffb7bc157",
+        "android_client_info": {
+          "package_name": "com.example.eco_farming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441105925750-hh6p4dda4bfnc024efqjvvtbngknjrdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdryPlzNXHKPE0R5zrxzxO0GY9rgprwNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441105925750-hh6p4dda4bfnc024efqjvvtbngknjrdj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "441105925750-sjcr56k8o47646vseuqp478jn35os8d6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecoFarming"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441105925750:android:4e934b9370d412fe7bc157",
+        "android_client_info": {
+          "package_name": "com.ptbio.ecofarming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441105925750-hh6p4dda4bfnc024efqjvvtbngknjrdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdryPlzNXHKPE0R5zrxzxO0GY9rgprwNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441105925750-hh6p4dda4bfnc024efqjvvtbngknjrdj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "441105925750-sjcr56k8o47646vseuqp478jn35os8d6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecoFarming"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
