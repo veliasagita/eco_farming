@@ -11,7 +11,6 @@ class Kategori extends StatefulWidget {
 
 class _KategoriState extends State<Kategori> {
   final db = FirebaseFirestore.instance;
-  var data;
 
   initSearch(String textEntered) async {
     var data;
