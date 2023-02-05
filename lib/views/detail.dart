@@ -179,8 +179,6 @@ class Detail extends StatelessWidget {
 
   void generatePDF() async {
     final pdf = pw.Document();
-    final font = await rootBundle.load("assets/Times-New-Roman/Montserrat.ttf");
-    var myFont = pw.Font.ttf(font);
 
     pdf.addPage(
       pw.Page(
