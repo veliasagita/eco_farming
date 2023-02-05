@@ -106,7 +106,7 @@ class _KategoriState extends State<Kategori> {
                                         doc.get('nama') ?? doc.get('nama'),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
-                    fontFamily: 'Montserrat',
+                                            fontFamily: 'Montserrat',
                                             fontSize: 36),
                                         textAlign: TextAlign.center),
                                   ),
