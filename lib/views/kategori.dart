@@ -52,20 +52,20 @@ class _KategoriState extends State<Kategori> {
     return Scaffold(
         body: SafeArea(
       child: Column(children: [
-        Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-                //tambahin buat refer langsung ke tanaman yang mau dicari
-                onChanged: (value) async {
-                  initSearch(value);
-                },
-                decoration: const InputDecoration(
-                    labelText: "Cari Tanaman",
-                    hintText: "Nama Tanaman",
-                    prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(10.0)))))),
+        // Padding(
+        //     padding: const EdgeInsets.all(8.0),
+        //     child: TextField(
+        //         //tambahin buat refer langsung ke tanaman yang mau dicari
+        //         onChanged: (value) async {
+        //           initSearch(value);
+        //         },
+        //         decoration: const InputDecoration(
+        //             labelText: "Cari Tanaman",
+        //             hintText: "Nama Tanaman",
+        //             prefixIcon: Icon(Icons.search),
+        //             border: OutlineInputBorder(
+        //                 borderRadius:
+        //                     BorderRadius.all(Radius.circular(10.0)))))),
         Expanded(
             child: StreamBuilder(
           stream: db.collection('kategori').snapshots(),
