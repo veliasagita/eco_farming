@@ -40,6 +40,7 @@ class Detail extends StatelessWidget {
                 nama,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
                     fontSize: 20,
                     color: Colors.black,
                     decoration: TextDecoration.none),
@@ -66,6 +67,7 @@ class Detail extends StatelessWidget {
                     Text('Persiapan:\n\n' + persiapan + '\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'Montserrat',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -75,6 +77,7 @@ class Detail extends StatelessWidget {
                             ? ''
                             : 'Persiapan Tanah:\n\n' + persiapanTanah + '\n',
                         style: const TextStyle(
+                            fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
                             color: Colors.black,
@@ -86,6 +89,7 @@ class Detail extends StatelessWidget {
                             : 'Persiapan Benih:\n\n' + persiapanBenih + '\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'Montserrat',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -93,6 +97,7 @@ class Detail extends StatelessWidget {
                     Text('Pasca Tanam:\n\n' + pascaTanam + '\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'Montserrat',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -100,6 +105,7 @@ class Detail extends StatelessWidget {
                     Text('Catatan:\n\n' + catatan,
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'Montserrat',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -140,6 +146,7 @@ class Detail extends StatelessWidget {
             const Text('Informasi Lebih Lanjut :',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
                     fontSize: 14,
                     color: Colors.black,
                     decoration: TextDecoration.none,
@@ -172,8 +179,7 @@ class Detail extends StatelessWidget {
 
   void generatePDF() async {
     final pdf = pw.Document();
-    final font =
-        await rootBundle.load("assets/Times-New-Roman/times-new-roman.ttf");
+    final font = await rootBundle.load("assets/Times-New-Roman/Montserrat.ttf");
     var myFont = pw.Font.ttf(font);
 
     pdf.addPage(

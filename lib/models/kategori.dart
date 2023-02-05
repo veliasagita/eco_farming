@@ -2,19 +2,19 @@ import 'dart:core';
 
 class Kategori {
   String id;
-  String name;
+  String nama;
   String img;
 
-  Kategori(this.id, this.name, this.img);
+  Kategori(this.id, this.nama, this.img);
 
   Kategori.fromJson(Map<String, dynamic> json)
       : id = json['id'],
-        name = json['name'],
+        nama = json['nama'],
         img = json['img'] ?? '';
 
   Map<String, dynamic> toJson() => {
         'id': id,
-        'nama': name,
+        'nama': nama,
         "img": img,
       };
 }

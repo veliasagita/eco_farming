@@ -14,7 +14,7 @@ class Komoditas {
   Komoditas(this.tanaman, this.persiapan, this.persiapanTanah,
       this.persiapanBenih, this.pascaTanam, this.catatan);
 
-  Komoditas.fronSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
+  Komoditas.fromSnapshot(QueryDocumentSnapshot<Map<String, dynamic>> snapshot)
       : tanaman = snapshot['tanaman'],
         persiapan = snapshot['persiapan'],
         persiapanTanah = snapshot['persiapanTanah'],
@@ -29,6 +29,7 @@ class Komoditas {
         persiapanBenih = json['persiapanBenih'],
         pascaTanam = json['pascaTanam'],
         catatan = json['catatan'];
+
   Map<String, dynamic> toJson() => {
         'tanaman': tanaman,
         'persiapan': persiapan,

@@ -1,53 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import 'detail.dart';
 
 class Tanaman extends StatelessWidget {
   final db = FirebaseFirestore.instance;
-  final storage = FirebaseStorage.instance;
 
   String namaKategori;
   String id;
 
   Tanaman(this.namaKategori, this.id, {Key? key}) : super(key: key);
-
-  getLink(nama) {
-    db.collection('kategori').snapshots().forEach((element) {
-      element.docs.toList().forEach((dt) {
-        db
-            .collection('kategori')
-            .doc(dt.id)
-            .collection(dt.get('nama'))
-            .snapshots()
-            .forEach((ada) {
-          ada.docs.toList().forEach((i) {
-            final storageRef =
-                storage.ref('/').child(i.get('nama') + '.jpg').getDownloadURL();
-            try {
-              db
-                  .collection('kategori')
-                  .doc(dt.id)
-                  .collection(dt.get('nama'))
-                  .doc(i.id)
-                  .set({'img': storageRef});
-            } catch (e) {
-              db
-                  .collection('kategori')
-                  .doc(dt.id)
-                  .collection(dt.get('nama'))
-                  .doc(i.id)
-                  .set({
-                'img':
-                    'https://firebasestorage.googleapis.com/v0/b/ecofarming-f867f.appspot.com/o/e5e5e5.png?alt=media&token=e161095f-7c7d-4b7c-8b13-cddc8d37d2d3'
-              });
-            }
-          });
-        });
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +33,6 @@ class Tanaman extends StatelessWidget {
                       crossAxisSpacing: 10,
                       padding: const EdgeInsets.all(10),
                       children: snapshot.data!.docs.map((doc) {
-                        getLink(doc.get('nama'));
                         return GestureDetector(
                             child: Container(
                                 height: MediaQuery.of(context).size.height / 4,

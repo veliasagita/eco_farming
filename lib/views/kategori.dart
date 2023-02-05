@@ -88,14 +88,26 @@ class _KategoriState extends State<Kategori> {
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.grey.shade300,
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    doc.get('nama') ?? doc.get('nama'),
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 30),
+                                child: Stack(children: [
+                                  Image.network(
+                                    doc.get('img'),
+                                    fit: BoxFit.cover,
+                                    height:
+                                        MediaQuery.of(context).size.height / 4,
+                                    width: MediaQuery.of(context).size.width,
+                                    opacity:
+                                        const AlwaysStoppedAnimation<double>(
+                                            0.3),
                                   ),
-                                )),
+                                  Center(
+                                    child: Text(
+                                        doc.get('nama') ?? doc.get('nama'),
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 36),
+                                        textAlign: TextAlign.center),
+                                  ),
+                                ])),
                             onTap: () {
                               Navigator.push(
                                   context,
