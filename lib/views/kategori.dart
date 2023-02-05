@@ -24,7 +24,6 @@ class _KategoriState extends State<Kategori> {
             .forEach((ada) {
           ada.docs.toList().forEach((i) {
             if (i.get('nama') == textEntered) {
-              print(i.get('nama'));
               data = {
                 "nama": i.get('nama'),
                 "persiapan": i.get('persiapan'),
@@ -41,6 +40,9 @@ class _KategoriState extends State<Kategori> {
       });
     });
   }
+
+  // @override
+  // Widget buildSuggestions(BuildContext context) {}
 
   @override
   void initState() {
@@ -104,6 +106,7 @@ class _KategoriState extends State<Kategori> {
                                         doc.get('nama') ?? doc.get('nama'),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
                                             fontSize: 36),
                                         textAlign: TextAlign.center),
                                   ),

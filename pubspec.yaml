@@ -91,15 +91,15 @@ flutter:
         - asset: assets/Times-New-Roman/times-new-roman.ttf
         - asset: assets/Times-New-Roman/times-new-roman-italic.ttf
           style: italic
-        - asset: assets/Times-New-Roman/times-new-roman-bold.ttf
-          style: bold
-        - asset: assets/Times-New-Roman/times-new-roman-bold-italic.ttf
-          style: bold-italic
+        # - asset: assets/Times-New-Roman/times-new-roman-bold.ttf
+        #   style: bold
+        # - asset: assets/Times-New-Roman/times-new-roman-bold-italic.ttf
+        #   style: bold-italic
     - family: Montserrat
       fonts:
         - asset: assets\Montserrat\Montserrat-Regular.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+    #     - asset: fonts/TrajanPro_Bold.ttf
+    #       weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

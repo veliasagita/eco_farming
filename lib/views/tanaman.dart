@@ -58,6 +58,7 @@ class Tanaman extends StatelessWidget {
                                         doc.get('nama') ?? doc.get('nama'),
                                         style: const TextStyle(
                                             fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
                                             fontSize: 18),
                                         textAlign: TextAlign.center),
                                   ),

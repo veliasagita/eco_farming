@@ -134,6 +134,7 @@ class Detail extends StatelessWidget {
                   Text('Download Cara Aplikasi Pupuk',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
                           fontSize: 14,
                           color: Colors.black,
                           decoration: TextDecoration.none),
