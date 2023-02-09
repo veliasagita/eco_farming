@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +16,7 @@ class Tanaman extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(1, 0, 17, 13),
       body: StreamBuilder<QuerySnapshot>(
           stream: db
               .collection('kategori')
@@ -37,31 +40,54 @@ class Tanaman extends StatelessWidget {
                             child: Container(
                                 height: MediaQuery.of(context).size.height / 4,
                                 width: MediaQuery.of(context).size.width / 3,
-                                padding: const EdgeInsets.all(20),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: Colors.grey.shade300),
                                 child: Stack(children: [
-                                  Image.network(
-                                    doc.get('img'),
-                                    fit: BoxFit.cover,
-                                    height:
-                                        MediaQuery.of(context).size.height / 4,
-                                    width:
-                                        MediaQuery.of(context).size.width / 3,
-                                    opacity:
-                                        const AlwaysStoppedAnimation<double>(
-                                            0.5),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.network(
+                                      doc.get('img'),
+                                      fit: BoxFit.fill,
+                                      height:
+                                          MediaQuery.of(context).size.height,
+                                      width: MediaQuery.of(context).size.width,
+                                    ),
                                   ),
-                                  Center(
-                                    child: Text(
-                                        doc.get('nama') ?? doc.get('nama'),
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                    fontFamily: 'Montserrat',
-                                            fontSize: 18),
-                                        textAlign: TextAlign.center),
-                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Stack(
+                                        children: [
+                                          Container(
+                                            decoration: const BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                  bottomLeft:
+                                                      Radius.circular(10),
+                                                  bottomRight:
+                                                      Radius.circular(10)),
+                                              color: Color.fromARGB(
+                                                  193, 181, 150, 72),
+                                            ),
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height /
+                                                20,
+                                          ),
+                                          Center(
+                                            child: Text(
+                                                doc.get('nama') ??
+                                                    doc.get('nama'),
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Roboto',
+                                                    fontSize: 18),
+                                                textAlign: TextAlign.center),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )
                                 ])),
                             onTap: () {
                               Navigator.push(

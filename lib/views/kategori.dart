@@ -52,81 +52,119 @@ class _KategoriState extends State<Kategori> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color.fromARGB(1, 0, 17, 13),
         body: SafeArea(
-      child: Column(children: [
-        // Padding(
-        //     padding: const EdgeInsets.all(8.0),
-        //     child: TextField(
-        //         //tambahin buat refer langsung ke tanaman yang mau dicari
-        //         onChanged: (value) async {
-        //           initSearch(value);
-        //         },
-        //         decoration: const InputDecoration(
-        //             labelText: "Cari Tanaman",
-        //             hintText: "Nama Tanaman",
-        //             prefixIcon: Icon(Icons.search),
-        //             border: OutlineInputBorder(
-        //                 borderRadius:
-        //                     BorderRadius.all(Radius.circular(10.0)))))),
-        Expanded(
-            child: StreamBuilder(
-          stream: db.collection('kategori').snapshots(),
-          builder: (context,
-              AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
-            if (!snapshot.hasData) {
-              return const Center(child: CircularProgressIndicator());
-            } else {
-              return ListView(
-                children: snapshot.data!.docs.map((doc) {
-                  return Container(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        GestureDetector(
-                            child: Container(
-                                height: MediaQuery.of(context).size.height / 4,
-                                width: MediaQuery.of(context).size.width,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Colors.grey.shade300,
-                                ),
-                                child: Stack(children: [
-                                  Image.network(
-                                    doc.get('img'),
-                                    fit: BoxFit.cover,
+          child: Column(children: [
+            // Padding(
+            //     padding: const EdgeInsets.all(8.0),
+            //     child: TextField(
+            //         //tambahin buat refer langsung ke tanaman yang mau dicari
+            //         onChanged: (value) async {
+            //           initSearch(value);
+            //         },
+            //         decoration: const InputDecoration(
+            //             labelText: "Cari Tanaman",
+            //             hintText: "Nama Tanaman",
+            //             prefixIcon: Icon(Icons.search),
+            //             border: OutlineInputBorder(
+            //                 borderRadius:
+            //                     BorderRadius.all(Radius.circular(10.0)))))),
+            Expanded(
+                child: StreamBuilder(
+              stream: db.collection('kategori').snapshots(),
+              builder: (context,
+                  AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(child: CircularProgressIndicator());
+                } else {
+                  return ListView(
+                    children: snapshot.data!.docs.map((doc) {
+                      return Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: [
+                            GestureDetector(
+                                child: Container(
                                     height:
                                         MediaQuery.of(context).size.height / 4,
                                     width: MediaQuery.of(context).size.width,
-                                    opacity:
-                                        const AlwaysStoppedAnimation<double>(
-                                            0.3),
-                                  ),
-                                  Center(
-                                    child: Text(
-                                        doc.get('nama') ?? doc.get('nama'),
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 36),
-                                        textAlign: TextAlign.center),
-                                  ),
-                                ])),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          Tanaman(doc.get('nama'), doc.id)));
-                            }),
-                      ],
-                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.grey.shade300,
+                                    ),
+                                    child: Stack(children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.network(
+                                          doc.get('img'),
+                                          fit: BoxFit.fill,
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                        ),
+                                      ),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Stack(
+                                            children: [
+                                              Container(
+                                                decoration: const BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.only(
+                                                          bottomLeft:
+                                                              Radius.circular(
+                                                                  10),
+                                                          bottomRight:
+                                                              Radius.circular(
+                                                                  10)),
+                                                  color: Color.fromARGB(
+                                                      193, 181, 150, 72),
+                                                ),
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    20,
+                                              ),
+                                              Center(
+                                                child: Text(
+                                                    doc.get('nama') ??
+                                                        doc.get('nama'),
+                                                    style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontFamily: 'Roboto',
+                                                        fontSize: 36),
+                                                    textAlign:
+                                                        TextAlign.center),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ])),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Tanaman(
+                                              doc.get('nama'), doc.id)));
+                                }),
+                          ],
+                        ),
+                      );
+                    }).toList(),
                   );
-                }).toList(),
-              );
-            }
-          },
-        ))
-      ]),
-    ));
+                }
+              },
+            ))
+          ]),
+        ));
   }
 }

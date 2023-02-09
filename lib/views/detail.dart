@@ -3,7 +3,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -27,27 +26,27 @@ class Detail extends StatelessWidget {
     return SafeArea(
         child: Container(
       padding: const EdgeInsets.all(10),
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration: const BoxDecoration(color: Color.fromARGB(1, 0, 17, 13)),
       child: Column(children: [
         Container(
-            height: MediaQuery.of(context).size.height * 8 / 100,
+            height: MediaQuery.of(context).size.height * 5 / 100,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.grey.shade300),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Center(
               child: Text(
                 nama,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Montserrat',
+                    fontFamily: 'Roboto',
                     fontSize: 20,
-                    color: Colors.black,
+                    color: Color.fromARGB(193, 181, 150, 72),
                     decoration: TextDecoration.none),
               ),
             )),
-        Divider(
-          color: Colors.grey.shade300,
+        const Divider(
+          color: Color.fromARGB(193, 181, 150, 72),
           height: 20,
           thickness: 1,
           indent: 20,
@@ -59,7 +58,7 @@ class Detail extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.grey.shade300),
+                color: const Color.fromARGB(193, 181, 150, 72)),
             child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
@@ -67,7 +66,7 @@ class Detail extends StatelessWidget {
                     Text('Persiapan:\n\n' + persiapan + '\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'Roboto',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -77,7 +76,7 @@ class Detail extends StatelessWidget {
                             ? ''
                             : 'Persiapan Tanah:\n\n' + persiapanTanah + '\n',
                         style: const TextStyle(
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'Roboto',
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
                             color: Colors.black,
@@ -89,7 +88,7 @@ class Detail extends StatelessWidget {
                             : 'Persiapan Benih:\n\n' + persiapanBenih + '\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'Roboto',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -97,7 +96,7 @@ class Detail extends StatelessWidget {
                     Text('Pasca Tanam:\n\n' + pascaTanam + '\n',
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'Roboto',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
@@ -105,15 +104,15 @@ class Detail extends StatelessWidget {
                     Text('Catatan:\n\n' + catatan,
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontFamily: 'Montserrat',
+                            fontFamily: 'Roboto',
                             fontSize: 14,
                             color: Colors.black,
                             decoration: TextDecoration.none),
                         textAlign: TextAlign.justify),
                   ],
                 ))),
-        Divider(
-          color: Colors.grey.shade300,
+        const Divider(
+          color: Color.fromARGB(193, 181, 150, 72),
           height: 20,
           thickness: 1,
           indent: 20,
@@ -122,20 +121,19 @@ class Detail extends StatelessWidget {
         Center(
           child: TextButton(
               style: TextButton.styleFrom(
-                  backgroundColor: Colors.lightGreen.shade200,
+                  backgroundColor: const Color.fromARGB(193, 181, 150, 72),
                   padding: const EdgeInsets.all(10),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
               onPressed: generatePDF,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(FontAwesomeIcons.download,
-                      size: 10, color: Colors.green),
-                  Text('Download Cara Aplikasi Pupuk',
+                  Text('DOWNLOAD CARA APLIKASI PUPUK ORGANIK ECO FARMING',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'Montserrat',
-                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontSize: 12,
                           color: Colors.black,
                           decoration: TextDecoration.none),
                       textAlign: TextAlign.justify),
@@ -143,13 +141,14 @@ class Detail extends StatelessWidget {
               )),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Informasi Lebih Lanjut :',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Montserrat',
+                    fontFamily: 'Roboto',
                     fontSize: 14,
-                    color: Colors.black,
+                    color: Colors.white,
                     decoration: TextDecoration.none,
                     letterSpacing: 0.1),
                 textAlign: TextAlign.justify),

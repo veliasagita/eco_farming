@@ -69,10 +69,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/logo-eco.png
-    - assets/Times-New-Roman/times-new-roman-bold-italic.ttf
-    - assets/Times-New-Roman/times-new-roman-bold.ttf
-    - assets/Times-New-Roman/times-new-roman-italic.ttf
-    - assets/Times-New-Roman/times-new-roman.ttf
+    - assets/Vege-Eco Farming (Original)-02 1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -86,20 +83,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: times-new-roman
+    - family: Roboto
       fonts:
-        - asset: assets/Times-New-Roman/times-new-roman.ttf
-        - asset: assets/Times-New-Roman/times-new-roman-italic.ttf
+        - asset: assets\Roboto\Roboto-Regular.ttf
+        - asset: assets\Roboto\Roboto-Italic.ttf
           style: italic
-        # - asset: assets/Times-New-Roman/times-new-roman-bold.ttf
-        #   style: bold
-        # - asset: assets/Times-New-Roman/times-new-roman-bold-italic.ttf
-        #   style: bold-italic
-    - family: Montserrat
-      fonts:
-        - asset: assets\Montserrat\Montserrat-Regular.ttf
-    #     - asset: fonts/TrajanPro_Bold.ttf
-    #       weight: 700
+        - asset: assets\Roboto\Roboto-Bold.ttf
+          weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
