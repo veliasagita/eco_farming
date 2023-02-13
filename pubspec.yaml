@@ -43,6 +43,7 @@ dependencies:
   cloud_firestore: ^4.3.1
   firebase_storage: ^11.0.10
   material: ^1.0.0+2
+  material_floating_search_bar: ^0.3.7
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,11 @@ flutter:
   assets:
     - assets/logo-eco.png
     - assets/Vege-Eco Farming (Original)-02 1.png
+    - assets/whatsapp.png
+    - assets/youtube.png
+    - assets/instagram.png
+    - assets/LSO Logo-02-02 1.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class Detail extends StatelessWidget {
   String nama;
@@ -153,26 +153,42 @@ class Detail extends StatelessWidget {
                     letterSpacing: 0.1),
                 textAlign: TextAlign.justify),
             GestureDetector(
-              child: const Icon(
-                FontAwesomeIcons.youtubeSquare,
-                size: 30,
-                color: Colors.red,
-              ),
+              child: Image.asset('assets/whatsapp.png'),
               onTap: () {
-                launch(
-                    'https://www.youtube.com/channel/UCrhDkjkwg7zV9AwtJz53omQ');
+                launchUrlString('wa.me/message/UNNBBNWYOLWYM1');
               },
             ),
             GestureDetector(
               child: const Icon(
-                FontAwesomeIcons.whatsappSquare,
+                FontAwesomeIcons.instagram,
                 size: 30,
-                color: Colors.green,
+                color: Colors.red,
               ),
-              onTap: () {},
+              onTap: () {
+                launchUrlString(
+                    'https://instagram.com/biosoltamax.id?igshid=Zjc2ZTc4Nzk=');
+              },
+            ),
+            GestureDetector(
+              child: const Icon(
+                FontAwesomeIcons.youtube,
+                size: 30,
+                color: Colors.red,
+              ),
+              onTap: () {
+                launchUrlString(
+                    'www.youtube.com/channel/UCrhDkjkwg7zV9AwtJz53omQ');
+              },
             ),
           ],
-        )
+        ),
+        Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image:
+                      AssetImage('assets/Vege-Eco Farming (Original)-02 1.png'),
+                  alignment: Alignment.bottomCenter)),
+        ),
       ]),
     ));
   }

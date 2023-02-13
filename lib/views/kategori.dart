@@ -41,9 +41,6 @@ class _KategoriState extends State<Kategori> {
     });
   }
 
-  // @override
-  // Widget buildSuggestions(BuildContext context) {}
-
   @override
   void initState() {
     super.initState();
@@ -55,115 +52,129 @@ class _KategoriState extends State<Kategori> {
         backgroundColor: const Color.fromARGB(1, 0, 17, 13),
         body: SafeArea(
           child: Column(children: [
-            // Padding(
-            //     padding: const EdgeInsets.all(8.0),
-            //     child: TextField(
-            //         //tambahin buat refer langsung ke tanaman yang mau dicari
-            //         onChanged: (value) async {
-            //           initSearch(value);
-            //         },
-            //         decoration: const InputDecoration(
-            //             labelText: "Cari Tanaman",
-            //             hintText: "Nama Tanaman",
-            //             prefixIcon: Icon(Icons.search),
-            //             border: OutlineInputBorder(
-            //                 borderRadius:
-            //                     BorderRadius.all(Radius.circular(10.0)))))),
             Expanded(
+                flex: 1,
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 5 / 100,
+                  width: MediaQuery.of(context).size.width - 30,
+                  child: const TextField(
+                    decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        suffixIcon: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                        ),
+                        hintText: 'Cari nama tanaman',
+                        hintStyle: TextStyle(color: Colors.white)),
+                  ),
+                )),
+            Expanded(
+                flex: 11,
                 child: StreamBuilder(
-              stream: db.collection('kategori').snapshots(),
-              builder: (context,
-                  AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
-                if (!snapshot.hasData) {
-                  return const Center(child: CircularProgressIndicator());
-                } else {
-                  return ListView(
-                    children: snapshot.data!.docs.map((doc) {
-                      return Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Column(
-                          children: [
-                            GestureDetector(
-                                child: Container(
-                                    height:
-                                        MediaQuery.of(context).size.height / 4,
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.grey.shade300,
-                                    ),
-                                    child: Stack(children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: Image.network(
-                                          doc.get('img'),
-                                          fit: BoxFit.fill,
-                                          height: MediaQuery.of(context)
-                                              .size
-                                              .height,
-                                          width:
-                                              MediaQuery.of(context).size.width,
+                  stream: db.collection('kategori').snapshots(),
+                  builder: (context,
+                      AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>>
+                          snapshot) {
+                    if (!snapshot.hasData) {
+                      return const Center(child: CircularProgressIndicator());
+                    } else {
+                      return ListView(
+                        children: snapshot.data!.docs.map((doc) {
+                          return Container(
+                            // height:
+                            //     MediaQuery.of(context).size.height * 80 / 100,
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              children: [
+                                GestureDetector(
+                                    child: Container(
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                4,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.grey.shade300,
                                         ),
-                                      ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Stack(
+                                        child: Stack(children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.network(
+                                              doc.get('img'),
+                                              fit: BoxFit.fill,
+                                              height: MediaQuery.of(context)
+                                                  .size
+                                                  .height,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
                                             children: [
-                                              Container(
-                                                decoration: const BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                          bottomLeft:
-                                                              Radius.circular(
-                                                                  10),
-                                                          bottomRight:
-                                                              Radius.circular(
-                                                                  10)),
-                                                  color: Color.fromARGB(
-                                                      193, 181, 150, 72),
-                                                ),
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height /
-                                                    20,
-                                              ),
-                                              Center(
-                                                child: Text(
-                                                    doc.get('nama') ??
-                                                        doc.get('nama'),
-                                                    style: const TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        fontFamily: 'Roboto',
-                                                        fontSize: 36),
-                                                    textAlign:
-                                                        TextAlign.center),
-                                              ),
+                                              Stack(
+                                                children: [
+                                                  Container(
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.only(
+                                                              bottomLeft: Radius
+                                                                  .circular(10),
+                                                              bottomRight:
+                                                                  Radius
+                                                                      .circular(
+                                                                          10)),
+                                                      color: Color.fromARGB(
+                                                          193, 181, 150, 72),
+                                                    ),
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .height /
+                                                            20,
+                                                  ),
+                                                  Center(
+                                                    child: Text(
+                                                        doc.get('nama') ??
+                                                            doc.get('nama'),
+                                                        style: const TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontFamily:
+                                                                'Roboto',
+                                                            fontSize: 36),
+                                                        textAlign:
+                                                            TextAlign.center),
+                                                  ),
+                                                ],
+                                              )
                                             ],
-                                          )
-                                        ],
-                                      ),
-                                    ])),
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Tanaman(
-                                              doc.get('nama'), doc.id)));
-                                }),
-                          ],
-                        ),
+                                          ),
+                                        ])),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Tanaman(
+                                                  doc.get('nama'), doc.id)));
+                                    }),
+                              ],
+                            ),
+                          );
+                        }).toList(),
                       );
-                    }).toList(),
-                  );
-                }
-              },
-            ))
+                    }
+                  },
+                ))
           ]),
         ));
   }
