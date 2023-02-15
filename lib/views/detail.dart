@@ -25,7 +25,8 @@ class Detail extends StatelessWidget {
     return SafeArea(
         child: Container(
             padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(color: Colors.white),
+            decoration:
+                const BoxDecoration(color: Color.fromARGB(1, 0, 17, 13)),
             child: Stack(
               children: [
                 const Positioned(
@@ -49,12 +50,12 @@ class Detail extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontFamily: 'Roboto',
                               fontSize: 20,
-                              color: Color.fromARGB(255, 15, 109, 56),
+                              color: Color.fromARGB(193, 181, 150, 72),
                               decoration: TextDecoration.none),
                         ),
                       )),
                   const Divider(
-                    color: Color.fromARGB(255, 217, 217, 217),
+                    color: Color.fromARGB(193, 181, 150, 72),
                     height: 20,
                     thickness: 1,
                     indent: 20,
@@ -66,7 +67,7 @@ class Detail extends StatelessWidget {
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 217, 217, 217)),
+                          color: const Color.fromARGB(193, 181, 150, 72)),
                       child: SingleChildScrollView(
                           scrollDirection: Axis.vertical,
                           child: Column(
@@ -124,7 +125,7 @@ class Detail extends StatelessWidget {
                             ],
                           ))),
                   const Divider(
-                    color: Color.fromARGB(255, 217, 217, 217),
+                    color: Color.fromARGB(193, 181, 150, 72),
                     height: 20,
                     thickness: 1,
                     indent: 20,
@@ -134,7 +135,7 @@ class Detail extends StatelessWidget {
                     child: TextButton(
                         style: TextButton.styleFrom(
                             backgroundColor:
-                                const Color.fromARGB(255, 15, 109, 56),
+                                const Color.fromARGB(193, 181, 150, 72),
                             padding: const EdgeInsets.all(10),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10))),
@@ -162,7 +163,7 @@ class Detail extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontFamily: 'Roboto',
                               fontSize: 14,
-                              color: Colors.black,
+                              color: Colors.white,
                               decoration: TextDecoration.none,
                               letterSpacing: 0.1),
                           textAlign: TextAlign.justify),
@@ -172,7 +173,9 @@ class Detail extends StatelessWidget {
                       GestureDetector(
                         child: Image.asset('assets/whatsapp.png'),
                         onTap: () {
-                          launchUrlString('wa.me/message/UNNBBNWYOLWYM1');
+                          launchUrlString(
+                              'https://wa.me/message/UNNBBNWYOLWYM1',
+                              mode: LaunchMode.externalApplication);
                         },
                       ),
                       const SizedBox(
@@ -182,7 +185,8 @@ class Detail extends StatelessWidget {
                         child: Image.asset('assets/instagram.png'),
                         onTap: () {
                           launchUrlString(
-                              'https://instagram.com/biosoltamax.id?igshid=Zjc2ZTc4Nzk=');
+                              'https://instagram.com/biosoltamax.id?igshid=Zjc2ZTc4Nzk=',
+                              mode: LaunchMode.externalApplication);
                         },
                       ),
                       const SizedBox(
@@ -192,7 +196,8 @@ class Detail extends StatelessWidget {
                         child: Image.asset('assets/youtube.png'),
                         onTap: () {
                           launchUrlString(
-                              'www.youtube.com/channel/UCrhDkjkwg7zV9AwtJz53omQ');
+                              'https://www.youtube.com/@pt.bandunginovasiorganikof1753',
+                              mode: LaunchMode.externalApplication);
                         },
                       ),
                     ],
