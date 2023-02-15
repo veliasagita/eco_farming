@@ -59,13 +59,26 @@ class _KategoriState extends State<Kategori> {
                   width: MediaQuery.of(context).size.width - 30,
                   child: const TextField(
                     decoration: InputDecoration(
+                        filled: true,
                         fillColor: Colors.white,
-                        suffixIcon: Icon(
-                          Icons.search,
-                          color: Colors.white,
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(13))),
+                        suffixIcon: Material(
+                          color: Color.fromARGB(193, 181, 150, 72),
+                          shadowColor: Color.fromARGB(193, 181, 150, 72),
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(13.0),
+                            bottomRight: Radius.circular(13.0),
+                          ),
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
                         ),
                         hintText: 'Cari nama tanaman',
-                        hintStyle: TextStyle(color: Colors.white)),
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 139, 139, 139))),
                   ),
                 )),
             Expanded(
